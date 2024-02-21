@@ -22,6 +22,7 @@ voting_ui_device := class(creative_device):
         voting_candidate{Texture:=Pump,Name:="Classic"}
         voting_candidate{Texture:=Pump, Name:= "Sniper Shootout"}
         voting_candidate{Texture:=Pump, Name:= "One in the Chamber"}
+        #voting_candidate{Texture:=Pump, Name:= "Ghost Boxfights"}
 
     # Runs when the device is started in a running game
     OnBegin<override>()<suspends>:void=
