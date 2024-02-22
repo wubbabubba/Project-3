@@ -139,6 +139,7 @@ voting_ui_device := class(creative_device):
             Orientation:=orientation.Horizontal
         
         for(VC:ShuffledArray):
+            #for x = 0
             MyButton:=VC.GetButton()
             MyButton.OnClick().Subscribe(ChangeVote)
             set MyVoteInfo.Buttons += array{MyButton}
