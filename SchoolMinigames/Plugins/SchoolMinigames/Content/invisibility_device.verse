@@ -1,15 +1,39 @@
 
-using { /Fortnite.com/Devices }
-using { /Verse.org/Simulation }
-using { /UnrealEngine.com/Temporary/Diagnostics }
+using {/Fortnite.com/Devices}
+using {/Fortnite.com/UI}
+using {/Fortnite.com/Game}
+using {/Fortnite.com/Characters}
+using {/Fortnite.com/Playspaces}
+using {/Verse.org/Simulation}
+using {/Verse.org/Random}
+using {/UnrealEngine.com/Temporary/Diagnostics}
+using {/UnrealEngine.com/Temporary/UI}
+using {/UnrealEngine.com/Temporary/SpatialMath}
 
-# See https://dev.epicgames.com/documentation/en-us/uefn/create-your-own-device-in-verse for how to create a verse device.
-
-# A Verse-authored creative device that can be placed in a level
 invisibility_device := class(creative_device):
-
-    # Runs when the device is started in a running game
+    #BELOW IS CARD INVIS STUFF ----------
+    @editable
+    CardDetector:conditional_button_device = conditional_button_device{}
+    #ON BEGIN STARTS WHEN GAME STARTS
     OnBegin<override>()<suspends>:void=
-        # TODO: Replace this with your code
-        Print("Hello, world!")
-        Print("2 + 2 = {2 + 2}")
+        spawn:
+            CheckForCard()
+    CheckForCard()<suspends>:void=
+         loop:
+            Sleep(0.5)
+            AllPlayers:=GetPlayspace().GetPlayers()
+            for(Player:AllPlayers):
+                if(IsAgent:agent = agent[Player]):
+                    if(CardDetector.IsHoldingItem[IsAgent]): #decide inside brackets []
+                        
+                        HidePlayer(IsAgent)
+                    else:
+                        
+                        ShowPlayer(IsAgent)
+    ShowPlayer(Agent:agent):void=
+        if(FC:=Agent.GetFortCharacter[]):
+            FC.Show()
+    HidePlayer(Agent:agent):void=
+        if(FC:=Agent.GetFortCharacter[]):
+            FC.Hide()
+

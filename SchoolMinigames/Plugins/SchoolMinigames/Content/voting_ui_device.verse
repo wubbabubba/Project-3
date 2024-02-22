@@ -19,28 +19,33 @@ voting_ui_device := class(creative_device):
     var VoteInfoPerAgent : [agent]?vote_info = map{}
 
     @editable VotingCandidates:[]voting_candidate=array:
-        voting_candidate{Texture:=Pump,Name:="Classic"}
+        voting_candidate{Texture:=Pump,Name:= "Classic"}
         voting_candidate{Texture:=Pump, Name:= "Sniper Shootout"}
         voting_candidate{Texture:=Pump, Name:= "One in the Chamber"}
-        #voting_candidate{Texture:=Pump, Name:= "Ghost Boxfights"}
+        voting_candidate{Texture:=Pump, Name:= "Ghost Boxfights"}
+        voting_candidate{Texture:=Pump, Name:= "Ghost Boxfights1"}
+        voting_candidate{Texture:=Pump, Name:= "Ghost Boxfights2"}
+    @editable var ShuffledArray:[]voting_candidate = array{}
+
 
     # Runs when the device is started in a running game
     OnBegin<override>()<suspends>:void=
        StartVotingTrigger.TriggeredEvent.Subscribe(StartVoting)
        StopVotingTrigger.TriggeredEvent.Subscribe(StopVoting)
     StartVoting(MaybeAgent:?agent):void=
-        Print("Start Voting")
+
+        set ShuffledArray = Shuffle(VotingCandidates)
+
         Players:=GetPlayers()
         for(P:Players):
             AddUI(P)
     StopVoting(MaybeAgent:?agent):void=
-        Print("Stop Voting")
         WinningIndex := Tally()
         Players:=GetPlayers()
         for(P:Players):
             RemoveUI(P)
             if(set VoteInfoPerAgent[P] = false){}
-        if(VC:=VotingCandidates[WinningIndex]):
+        if(VC:=ShuffledArray[WinningIndex]):
             VC.Activate()
     # Turns string to message
     S2M2<localizes>(S:string):message="{S}"
@@ -133,7 +138,7 @@ voting_ui_device := class(creative_device):
         VotingStackBox:=stack_box:
             Orientation:=orientation.Horizontal
         
-        for(VC:VotingCandidates):
+        for(VC:ShuffledArray):
             MyButton:=VC.GetButton()
             MyButton.OnClick().Subscribe(ChangeVote)
             set MyVoteInfo.Buttons += array{MyButton}
