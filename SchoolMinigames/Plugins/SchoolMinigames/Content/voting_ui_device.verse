@@ -23,8 +23,6 @@ voting_ui_device := class(creative_device):
         voting_candidate{Texture:=Pump, Name:= "Sniper Shootout"}
         voting_candidate{Texture:=Pump, Name:= "One in the Chamber"}
         voting_candidate{Texture:=Pump, Name:= "Ghost Boxfights"}
-        voting_candidate{Texture:=Pump, Name:= "Ghost Boxfights1"}
-        voting_candidate{Texture:=Pump, Name:= "Ghost Boxfights2"}
     @editable var ShuffledArray:[]voting_candidate = array{}
 
 
@@ -35,6 +33,9 @@ voting_ui_device := class(creative_device):
     StartVoting(MaybeAgent:?agent):void=
 
         set ShuffledArray = Shuffle(VotingCandidates)
+        #for (Index :=0..ShuffledArray.length - 1):
+        #if (ShuffledArray.length := 3):
+          #  ShuffledArray.RemoveElement[3]
 
         Players:=GetPlayers()
         for(P:Players):
@@ -129,7 +130,7 @@ voting_ui_device := class(creative_device):
             then:
                 PlayerUI.RemoveWidget(Canvas)
 
-    
+    var NumCandidatesToGrab : int = 3
     MakeCanvas(Agent:agent):canvas= 
         MyVoteInfo:=vote_info:
 
@@ -138,18 +139,18 @@ voting_ui_device := class(creative_device):
         VotingStackBox:=stack_box:
             Orientation:=orientation.Horizontal
         
-        for(VC:ShuffledArray):
-            #for x = 0
-            MyButton:=VC.GetButton()
-            MyButton.OnClick().Subscribe(ChangeVote)
-            set MyVoteInfo.Buttons += array{MyButton}
-            MyWidget:=VC.GetStackBox(MyButton)
-            MySlot:=stack_box_slot:
-                Widget:=MyWidget
-                Padding:=margin{Left:=20.0,Right:=20.0}
-                HorizontalAlignment:=horizontal_alignment.Fill
-                VerticalAlignment:=vertical_alignment.Fill
-            VotingStackBox.AddWidget(MySlot)
+        for(X:=0..NumCandidatesToGrab-1):
+            if(VC:=ShuffledArray[X]):
+                MyButton:=VC.GetButton()
+                MyButton.OnClick().Subscribe(ChangeVote)
+                set MyVoteInfo.Buttons += array{MyButton}
+                MyWidget:=VC.GetStackBox(MyButton)
+                MySlot:=stack_box_slot:
+                    Widget:=MyWidget
+                    Padding:=margin{Left:=20.0,Right:=20.0}
+                    HorizontalAlignment:=horizontal_alignment.Fill
+                    VerticalAlignment:=vertical_alignment.Fill
+                VotingStackBox.AddWidget(MySlot)
 
 
         MyOverlay:=overlay:
