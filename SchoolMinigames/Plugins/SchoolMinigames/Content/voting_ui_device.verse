@@ -23,6 +23,7 @@ voting_ui_device := class(creative_device):
         voting_candidate{Texture:=Pump, Name:= "Sniper Shootout"}
         voting_candidate{Texture:=Pump, Name:= "One in the Chamber"}
         voting_candidate{Texture:=Pump, Name:= "Ghost Boxfights"}
+        voting_candidate{Texture:=Pump, Name:= "Shield Skirmish"}
     @editable var ShuffledArray:[]voting_candidate = array{}
 
 
@@ -134,7 +135,7 @@ voting_ui_device := class(creative_device):
     MakeCanvas(Agent:agent):canvas= 
         MyVoteInfo:=vote_info:
 
-        BackButton:=button_regular{DefaultText:=S2M2("Submit")}
+        BackButton:=button_regular{DefaultText:=S2M2("Exit")}
         BackButton.OnClick().Subscribe(SubmitRemoveUI)
         VotingStackBox:=stack_box:
             Orientation:=orientation.Horizontal
