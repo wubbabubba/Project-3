@@ -2,27 +2,27 @@
     "folders": [
         {
             "name": "SchoolMinigames",
-            "path": "C:/Users/icebl/OneDrive/Documents/GitHub/Project-3/SchoolMinigames/Plugins/SchoolMinigames/Content"
+            "path": "C:/Users/rlkon/Desktop/Project-3/SchoolMinigames/Plugins/SchoolMinigames/Content"
         },
         {
             "name": "SchoolMinigames/Assets",
-            "path": "C:/Users/icebl/AppData/Local/UnrealEditorFortnite/Saved/VerseProject/SchoolMinigames/SchoolMinigames-Assets"
+            "path": "C:/Users/rlkon/AppData/Local/UnrealEditorFortnite/Saved/VerseProject/SchoolMinigames/SchoolMinigames-Assets"
         },
         {
             "name": "vproject - DO NOT MODIFY",
-            "path": "C:/Users/icebl/AppData/Local/UnrealEditorFortnite/Saved/VerseProject/SchoolMinigames/vproject"
+            "path": "C:/Users/rlkon/AppData/Local/UnrealEditorFortnite/Saved/VerseProject/SchoolMinigames/vproject"
         },
         {
             "name": "Verse",
-            "path": "C:/Users/icebl/AppData/Local/UnrealEditorFortnite/Saved/VerseProject/SchoolMinigames/Verse"
+            "path": "C:/Users/rlkon/AppData/Local/UnrealEditorFortnite/Saved/VerseProject/SchoolMinigames/Verse"
         },
         {
             "name": "UnrealEngine",
-            "path": "C:/Users/icebl/AppData/Local/UnrealEditorFortnite/Saved/VerseProject/SchoolMinigames/UnrealEngine"
+            "path": "C:/Users/rlkon/AppData/Local/UnrealEditorFortnite/Saved/VerseProject/SchoolMinigames/UnrealEngine"
         },
         {
             "name": "Fortnite",
-            "path": "C:/Users/icebl/AppData/Local/UnrealEditorFortnite/Saved/VerseProject/SchoolMinigames/Fortnite"
+            "path": "C:/Users/rlkon/AppData/Local/UnrealEditorFortnite/Saved/VerseProject/SchoolMinigames/Fortnite"
         }
     ],
     "settings": {
@@ -38,7 +38,6 @@
             "__ExternalObjects__": true
         },
         "files.autoSave": "onWindowChange",
-        "workbench.colorTheme": "Verse (Dark)",
         "editor.bracketPairColorization.enabled": false,
         "editor.acceptSuggestionOnEnter": "off"
     },

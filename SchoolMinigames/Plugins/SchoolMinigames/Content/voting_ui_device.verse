@@ -132,7 +132,7 @@ voting_ui_device := class(creative_device):
             then:
                 PlayerUI.RemoveWidget(Canvas)
 
-    var NumCandidatesToGrab : int = 3
+    var NumCandidatesToGrab : int = 5
     MakeCanvas(Agent:agent):canvas= 
         MyVoteInfo:=vote_info:
 
