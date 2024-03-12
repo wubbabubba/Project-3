@@ -24,6 +24,7 @@ voting_ui_device := class(creative_device):
         voting_candidate{Texture:=Pump, Name:= "One in the Chamber"}
         voting_candidate{Texture:=Pump, Name:= "Ghost Boxfights"}
         voting_candidate{Texture:=Pump, Name:= "Shield Skirmish"}
+        voting_candidate{Texture:=Pump, Name:= "Zone Wars"}
     @editable var ShuffledArray:[]voting_candidate = array{}
 
 

@@ -1,5 +1,5 @@
 {
-	"fileVersion": 14,
+	"fileVersion": 15,
 	"versionSuffix": "",
 	"title": "SchoolMinigames",
 	"description": "",
@@ -7,7 +7,7 @@
 	"docsUrl": "",
 	"kind": "Island",
 	"templateCategory": "UserGenerated",
-	"compatibilityVersion": "28.30",
+	"compatibilityVersion": "29.00",
 	"editorPermissions": [],
 	"epicApp": "",
 	"sortPriority": 0,
@@ -40,5 +40,6 @@
 		{
 			"SchoolMinigames": "e2054fe8-4ac1-4d2a-c005-01b0a3ddb694"
 		}
-	}
+	},
+	"featureSet": ""
 }
