@@ -29,6 +29,7 @@ voting_ui_device := class(creative_device):
         voting_candidate{Texture:=Pump, Name:= "Throwable Throwdown"}
         voting_candidate{Texture:=Pump, Name:= "Fish Fight"}
         voting_candidate{Texture:=Pump, Name:= "Blade Blitz"}
+        voting_candidate{Texture:=Pump, Name:= "Sniper Shootout"}
     @editable var ShuffledArray:[]voting_candidate = array{}
 
 
@@ -136,7 +137,7 @@ voting_ui_device := class(creative_device):
             then:
                 PlayerUI.RemoveWidget(Canvas)
 
-    var NumCandidatesToGrab : int = 5
+    var NumCandidatesToGrab : int = 7
     MakeCanvas(Agent:agent):canvas= 
         MyVoteInfo:=vote_info:
 
