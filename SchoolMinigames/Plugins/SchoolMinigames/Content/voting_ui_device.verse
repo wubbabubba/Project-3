@@ -21,14 +21,15 @@ voting_ui_device := class(creative_device):
     @editable VotingCandidates:[]voting_candidate=array:
         #voting_candidate{Texture:=Pump,Name:= "Classic"}
         #voting_candidate{Texture:=Pump, Name:= "Sniper Shootout"}
-        voting_candidate{Texture:=Pump, Name:= "One in the Chamber"}
+        #voting_candidate{Texture:=Pump, Name:= "One in the Chamber"}
         #voting_candidate{Texture:=Pump, Name:= "Ghost Boxfights"}
         #voting_candidate{Texture:=Pump, Name:= "Shield Skirmish"}
-        voting_candidate{Texture:=Pump, Name:= "Zone Wars"}
+        #voting_candidate{Texture:=Pump, Name:= "Zone Wars"}
         voting_candidate{Texture:=Pump, Name:= "Mythic Mayhem"}
         voting_candidate{Texture:=Pump, Name:= "Throwable Throwdown"}
         voting_candidate{Texture:=Pump, Name:= "Fish Fight"}
         voting_candidate{Texture:=Pump, Name:= "Blade Blitz"}
+        voting_candidate{Texture:=Pump, Name:= "One Shot"}
         voting_candidate{Texture:=Pump, Name:= "One Shot"}
 
     @editable var ShuffledArray:[]voting_candidate = array{}
